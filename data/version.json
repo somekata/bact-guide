@@ -8,5 +8,10 @@
     "version": "v0.002",
     "date": "2025-11-06",
     "description": "改定版（version情報を追加）"    
+    },
+        {
+    "version": "v0.003",
+    "date": "2025-11-07",
+    "description": "改定版（step1のcss変更、計算機追加）"    
     }
 ]

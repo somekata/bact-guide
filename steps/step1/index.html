@@ -27,40 +27,48 @@
 
     <main>
       <!-- 概要 -->
-      <section class="intro">
+      <section class="section">
         <h2>今回の目的と仕上がり</h2>
-        <p>
-          MHII を用いて <strong>液体培地 420 mL</strong> と
-          <strong>寒天平板用培地 420 mL</strong> を作成します。<br />
-          寒天濃度は <strong>1.5%（w/v）</strong>、平板は
-          <strong>1枚あたり 21 mL</strong> で
-          <strong>合計 20 枚</strong> を作ります。<br />
-          容器は、液体培地は <strong>500 mL の耐熱瓶</strong>、寒天培地は
-          <strong>500 mL の三角フラスコ</strong> を使用します。
-        </p>
+        <div class="grid">
+          <div class="card">
+            <p>
+              MHII を用いて <strong>液体培地 420 mL</strong> と
+              <strong>寒天平板用培地 420 mL</strong> を作成します。<br />
+              寒天濃度は <strong>1.5%（w/v）</strong>、平板は
+              <strong>1枚あたり 21 mL</strong> で
+              <strong>合計 20 枚</strong> を作ります。<br />
+              容器は、液体培地は <strong>500 mL の耐熱瓶</strong>、寒天培地は
+              <strong>500 mL の三角フラスコ</strong> を使用します。
+            </p>
+          </div>
+        </div>
       </section>
 
       <!-- 材料と器具 -->
       <section>
         <h2>材料・器具</h2>
-        <ul>
-          <li>Muller Hinton II（脱水培地粉末）</li>
-          <li>アガー粉末（寒天）</li>
-          <li>滅菌蒸留水（または精製水）</li>
-          <li>500 mL 耐熱メディアボトル（液体培地用）</li>
-          <li>
-            500 mL 三角フラスコ（寒天培地用）＋ アルミホイル or 耐熱キャップ
-          </li>
-          <li>pH 試験紙または pH メータ（必要なら）</li>
-          <li>ホットプレート＆撹拌子、耐熱手袋</li>
-          <li>オートクレーブ（121℃・15分）</li>
-          <li>滅菌済みペトリ皿（90 mm）× 20</li>
-          <li>ピペット（25 mL）または注ぎやすい保温容器</li>
-        </ul>
+        <div class="grid">
+          <div class="card">
+            <ul>
+              <li>Muller Hinton II（脱水培地粉末）</li>
+              <li>アガー粉末（寒天）</li>
+              <li>滅菌蒸留水（または精製水）</li>
+              <li>500 mL 耐熱メディアボトル（液体培地用）</li>
+              <li>
+                500 mL 三角フラスコ（寒天培地用）＋ アルミホイル or 耐熱キャップ
+              </li>
+              <li>pH 試験紙または pH メータ（必要なら）</li>
+              <li>ホットプレート＆撹拌子、耐熱手袋</li>
+              <li>オートクレーブ（121℃・15分）</li>
+              <li>滅菌済みペトリ皿（90 mm）× 20</li>
+              <li>ピペット（25 mL）または注ぎやすい保温容器</li>
+            </ul>
+          </div>
+        </div>
       </section>
 
       <!-- 計算 -->
-      <section class="procedure">
+      <section class="section">
         <h2>調製量と秤量の計算</h2>
         <div class="note">
           <p>
@@ -68,124 +76,226 @@
             >。寒天は<strong>1.5%（= 1.5 g / 100 mL）</strong>。
           </p>
         </div>
-        <ul>
-          <li>
-            <strong>液体培地 420 mL の MHII 粉末量：</strong>22 g/L × 0.420 L =
-            <strong>9.24 g</strong>
-          </li>
-          <li>
-            <strong>寒天培地 420 mL の MHII 粉末量：</strong>22 g/L × 0.420 L =
-            <strong>9.24 g</strong>
-          </li>
-          <li>
-            <strong>寒天（アガー）量：</strong>1.5 g/100 mL × 420 mL =
-            <strong>6.30 g</strong>
-          </li>
-          <li>
-            <strong>平板枚数：</strong>420 mL ÷ 21 mL/枚 =
-            <strong>20 枚</strong>
-          </li>
-        </ul>
+        <div class="grid">
+          <div class="card">
+            <ul>
+              <li>
+                <strong>液体培地 420 mL の MHII 粉末量：</strong>22 g/L × 0.420
+                L =
+                <strong>9.24 g</strong>
+              </li>
+              <li>
+                <strong>寒天培地 420 mL の MHII 粉末量：</strong>22 g/L × 0.420
+                L =
+                <strong>9.24 g</strong>
+              </li>
+              <li>
+                <strong>寒天（アガー）量：</strong>1.5 g/100 mL × 420 mL =
+                <strong>6.30 g</strong>
+              </li>
+              <li>
+                <strong>平板枚数：</strong>420 mL ÷ 21 mL/枚 =
+                <strong>20 枚</strong>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <!-- ミニ電卓：培地粉末と寒天量 -->
+      <section class="section">
+        <h2>培地粉末・寒天量の計算 / Media & Agar Calculator</h2>
+        <div class="grid cols-2">
+          <div class="card">
+            <h3>培地粉末の必要量（g）</h3>
+            <form id="mediaForm">
+              <div class="grid cols-2">
+                <div>
+                  <label for="mediaPerL">1 L あたりの培地粉末量（g）</label>
+                  <input
+                    id="mediaPerL"
+                    type="number"
+                    min="0"
+                    step="0.1"
+                    placeholder="例: 22"
+                    value="22"
+                    required
+                  />
+                </div>
+                <div>
+                  <label for="mediaVol">作成する培地量（mL）</label>
+                  <input
+                    id="mediaVol"
+                    type="number"
+                    min="0"
+                    step="10"
+                    placeholder="例: 420"
+                    value="500"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="flex-row" style="margin-top: 0.6rem">
+                <button class="btn" type="submit">計算する</button>
+                <span class="result" id="mediaResult"></span>
+              </div>
+            </form>
+            <div class="note" style="margin-top: 0.6rem">
+              <strong>Tip:</strong> 1 L = 1000 mL。22 g/L なら 420 mL → 9.24 g。
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>寒天（アガー）の必要量（g）</h3>
+            <form id="agarForm">
+              <div class="grid cols-2">
+                <div>
+                  <label for="agarPercent">寒天濃度（% w/v）</label>
+                  <input
+                    id="agarPercent"
+                    type="number"
+                    min="0"
+                    step="0.1"
+                    placeholder="例: 1.5"
+                    value="1.5"
+                    required
+                  />
+                </div>
+                <div>
+                  <label for="agarVol">作成する培地量（mL）</label>
+                  <input
+                    id="agarVol"
+                    type="number"
+                    min="0"
+                    step="10"
+                    placeholder="例: 420"
+                    value="500"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="flex-row" style="margin-top: 0.6rem">
+                <button class="btn" type="submit">計算する</button>
+                <span class="result" id="agarResult"></span>
+              </div>
+            </form>
+            <div class="note" style="margin-top: 0.6rem">
+              <strong>Tip:</strong> 1.5% = 1.5 g / 100 mL。420 mL → 6.3 g。
+            </div>
+          </div>
+        </div>
       </section>
 
       <!-- 手順A 液体培地 -->
-      <section class="procedure">
+      <section class="section">
         <h2>手順 A：液体培地（MHII Broth）420 mL</h2>
-        <ol>
-          <li>
-            500 mL の耐熱瓶に、<strong>滅菌水 約350 mL</strong> を入れる。
-          </li>
-          <li>MHII 粉末 <strong>9.24 g</strong> を秤量し、瓶に加える。</li>
-          <li>
-            撹拌して溶かし、最終体積が
-            <strong>420 mL</strong> になるよう滅菌水でメスアップ。
-          </li>
-          <li>必要に応じて pH を確認（MHII 標準は 7.3 付近）。</li>
-          <li>
-            キャップを<strong>軽く緩め</strong>、耐熱テープで固定し、オートクレーブで
-            <strong>121℃・15分</strong> 滅菌。
-          </li>
-          <li>
-            減圧完了後に取り出し、室温まで冷却。ラベル（名称・量・日付・作成者）を貼る。
-          </li>
-        </ol>
-        <p class="warn">
-          <strong>注意：</strong
-          >オートクレーブ中はキャップを固く閉めない。圧力が完全に下がる前に開けない。
-        </p>
+        <div class="grid">
+          <div class="card">
+            <ol>
+              <li>
+                500 mL の耐熱瓶に、<strong>滅菌水 約350 mL</strong> を入れる。
+              </li>
+              <li>MHII 粉末 <strong>9.24 g</strong> を秤量し、瓶に加える。</li>
+              <li>
+                撹拌して溶かし、最終体積が
+                <strong>420 mL</strong> になるよう滅菌水でメスアップ。
+              </li>
+              <li>必要に応じて pH を確認（MHII 標準は 7.3 付近）。</li>
+              <li>
+                キャップを<strong>軽く緩め</strong>、耐熱テープで固定し、オートクレーブで
+                <strong>121℃・15分</strong> 滅菌。
+              </li>
+              <li>
+                減圧完了後に取り出し、室温まで冷却。ラベル（名称・量・日付・作成者）を貼る。
+              </li>
+            </ol>
+            <p class="warn">
+              <strong>注意：</strong
+              >オートクレーブ中はキャップを固く閉めない。圧力が完全に下がる前に開けない。
+            </p>
+          </div>
+        </div>
       </section>
 
       <!-- 手順B 寒天培地 -->
-      <section class="procedure">
+      <section class="section">
         <h2>手順 B：寒天平板用培地（MHII Agar 1.5%）420 mL</h2>
-        <ol>
-          <li>
-            500 mL 三角フラスコに <strong>滅菌水 約320 mL</strong> を入れる。
-          </li>
-          <li>
-            MHII 粉末 <strong>9.24 g</strong> と 寒天
-            <strong>6.30 g</strong> を秤量し、フラスコに加える。
-          </li>
-          <li>
-            ホットプレートで<strong>沸騰直前まで加熱</strong>し、寒天をしっかり溶かす（吹きこぼれ注意）。
-          </li>
-          <li>
-            滅菌水で最終体積
-            <strong>420 mL</strong> にメスアップし、軽く撹拌して均一化。
-          </li>
-          <li>
-            口をアルミホイルで覆うかキャップを<strong>軽く緩め</strong>、オートクレーブで
-            <strong>121℃・15分</strong> 滅菌。
-          </li>
-          <li>
-            滅菌後、<strong>50〜55℃</strong>
-            まで冷ましてから注ぎ工程へ（手で触れて温かい程度）。
-          </li>
-          <li>
-            滅菌済みペトリ皿に <strong>1枚 21 mL</strong> ずつ注ぎ、<strong
-              >合計 20 枚</strong
-            >
-            作る。
-          </li>
-          <li>
-            気泡があれば素早く除去し、<strong>水平</strong>
-            な台で固化させる（フタは少しずらして結露を逃がす）。
-          </li>
-          <li>
-            固まったらフタを閉じ、底面にラベル（MHII agar
-            1.5%、作成日、作成者）を貼り、<strong>逆さ置き</strong>で保管。
-          </li>
-        </ol>
-        <p class="warn">
-          <strong>注意：</strong>420 mL を 500 mL
-          フラスコで扱うと満量に近いです。吹きこぼれ・沸騰突沸に十分注意し、必要なら
-          1 L フラスコを使用。
-        </p>
+        <div class="grid">
+          <div class="card">
+            <ol>
+              <li>
+                500 mL 三角フラスコに
+                <strong>滅菌水 約320 mL</strong> を入れる。
+              </li>
+              <li>
+                MHII 粉末 <strong>9.24 g</strong> と 寒天
+                <strong>6.30 g</strong> を秤量し、フラスコに加える。
+              </li>
+              <li>
+                ホットプレートで<strong>沸騰直前まで加熱</strong>し、寒天をしっかり溶かす（吹きこぼれ注意）。
+              </li>
+              <li>
+                滅菌水で最終体積
+                <strong>420 mL</strong> にメスアップし、軽く撹拌して均一化。
+              </li>
+              <li>
+                口をアルミホイルで覆うかキャップを<strong>軽く緩め</strong>、オートクレーブで
+                <strong>121℃・15分</strong> 滅菌。
+              </li>
+              <li>
+                滅菌後、<strong>50〜55℃</strong>
+                まで冷ましてから注ぎ工程へ（手で触れて温かい程度）。
+              </li>
+              <li>
+                滅菌済みペトリ皿に <strong>1枚 21 mL</strong> ずつ注ぎ、<strong
+                  >合計 20 枚</strong
+                >
+                作る。
+              </li>
+              <li>
+                気泡があれば素早く除去し、<strong>水平</strong>
+                な台で固化させる（フタは少しずらして結露を逃がす）。
+              </li>
+              <li>
+                固まったらフタを閉じ、底面にラベル（MHII agar
+                1.5%、作成日、作成者）を貼り、<strong>逆さ置き</strong>で保管。
+              </li>
+            </ol>
+            <p class="warn">
+              <strong>注意：</strong>420 mL を 500 mL
+              フラスコで扱うと満量に近いです。吹きこぼれ・沸騰突沸に十分注意し、必要なら
+              1 L フラスコを使用。
+            </p>
+          </div>
+        </div>
       </section>
 
       <!-- よくある失敗 -->
-      <section class="tips">
+      <section class="section">
         <h2>よくあるエラーと対策</h2>
-        <ul>
-          <li>
-            <strong>寒天が溶けきらない：</strong
-            >完全に透明になるまで加熱・撹拌。部分的な白濁が残らないように。
-          </li>
-          <li>
-            <strong>平板に水滴（結露）：</strong
-            >注いだ直後はフタを少しずらして蒸気を逃がし、固まったら逆さ保管。
-          </li>
-          <li>
-            <strong>コンタミ：</strong
-            >注ぎは火炎滅菌またはクリーンベンチ下で。注ぎ口に触れない。
-          </li>
-          <li>
-            <strong>抗菌薬添加：</strong>オートクレーブ後、<strong
-              >50〜55℃</strong
-            >
-            に冷ましてから無菌的に添加（本手順では未使用）。
-          </li>
-        </ul>
+        <div class="grid">
+          <div class="card">
+            <ul>
+              <li>
+                <strong>寒天が溶けきらない：</strong
+                >完全に透明になるまで加熱・撹拌。部分的な白濁が残らないように。
+              </li>
+              <li>
+                <strong>平板に水滴（結露）：</strong
+                >注いだ直後はフタを少しずらして蒸気を逃がし、固まったら逆さ保管。
+              </li>
+              <li>
+                <strong>コンタミ：</strong
+                >注ぎは火炎滅菌またはクリーンベンチ下で。注ぎ口に触れない。
+              </li>
+              <li>
+                <strong>抗菌薬添加：</strong>オートクレーブ後、<strong
+                  >50〜55℃</strong
+                >
+                に冷ましてから無菌的に添加（本手順では未使用）。
+              </li>
+            </ul>
+          </div>
+        </div>
       </section>
 
       <div class="nav-buttons">
@@ -198,22 +308,27 @@
 
     <footer></footer>
 
-    <style>
-      /* ページ固有の少量スタイル（必要なら common.css へ移行可） */
-      .note {
-        background: #eef2ff;
-        border-left: 4px solid #6366f1;
-        padding: 0.75rem 1rem;
-        border-radius: 6px;
-        margin-bottom: 1rem;
-      }
-      .warn {
-        background: #fef3c7;
-        border-left: 4px solid #f59e0b;
-        padding: 0.75rem 1rem;
-        border-radius: 6px;
-        margin-top: 1rem;
-      }
-    </style>
+    <script>
+      // 培地粉末計算
+      document.getElementById("mediaForm")?.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const gPerL = Number(document.getElementById("mediaPerL").value);
+        const vol = Number(document.getElementById("mediaVol").value);
+        if (!(gPerL > 0) || !(vol > 0)) return;
+        const g = (gPerL * vol) / 1000;
+        document.getElementById("mediaResult").textContent =
+          g.toFixed(2) + " g";
+      });
+
+      // 寒天量計算
+      document.getElementById("agarForm")?.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const percent = Number(document.getElementById("agarPercent").value);
+        const vol = Number(document.getElementById("agarVol").value);
+        if (!(percent > 0) || !(vol > 0)) return;
+        const g = (percent * vol) / 100;
+        document.getElementById("agarResult").textContent = g.toFixed(2) + " g";
+      });
+    </script>
   </body>
 </html>
