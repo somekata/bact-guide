@@ -1,0 +1,12 @@
+[
+    {
+    "version": "v0.001",
+    "date": "2025-11-05",
+    "description": "初期版（Step1〜3を構築）"
+    },
+    {
+    "version": "v0.002",
+    "date": "2025-11-06",
+    "description": "改定版（version情報を追加）"    
+    }
+]
