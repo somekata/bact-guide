@@ -3,13 +3,400 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Step 1: MHIIの調製（液体/寒天）| 細菌学実験ガイド</title>
+    <title>Step 3: 実験器具の扱い方 | 細菌学実験ガイド</title>
     <link rel="stylesheet" href="../../style/common.css" />
     <link rel="stylesheet" href="../common.css" />
     <script src="../../js/common.js" defer></script>
+    <style>
+      /* 必要なら後で steps/common.css に移動してOK（最小のページ固有） */
+      .hero {
+        text-align: center;
+        padding: 1.6rem 0.8rem;
+      }
+      .hero h2 {
+        margin: 0 0 0.4rem;
+      }
+      .hero p {
+        margin: 0.2rem 0;
+        color: #475569;
+      }
+      .mini {
+        font-size: 0.92rem;
+        color: #64748b;
+      }
+      .two-col {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1rem;
+      }
+      .icon-bullet ul {
+        list-style: none;
+        padding-left: 0;
+      }
+      .icon-bullet li::before {
+        content: "• ";
+        color: #2563eb;
+        font-weight: 700;
+      }
+    </style>
   </head>
   <body>
-    <p>準備中</p>
+    <header>
+      <h1>
+        🧪 Step 3：実験器具の扱い方 / Using Laboratory Instruments Properly
+      </h1>
+      <nav>
+        <ul>
+          <li><a href="../../index.html">ホーム</a></li>
+          <li><a href="../../introduction.html">導入</a></li>
+          <li><a href="../step1/index.html">Step 1</a></li>
+          <li><a href="../step2/index.html">Step 2</a></li>
+          <li><a href="../step3/index.html" class="active">Step 3</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <!-- HERO -->
+      <section class="hero">
+        <h2>正確さと再現性を支える「器具操作」</h2>
+        <p>
+          ピペットマン（Gilson /
+          Eppendorf）、マルチ、オートピペッター、各種チューブの基礎。
+        </p>
+        <p class="mini">
+          A small mistake in handling can distort CFU, OD, and MIC measurements.
+          Master the basics.
+        </p>
+      </section>
+
+      <!-- 1. 導入：意義 -->
+      <section class="section">
+        <h2>1) なぜ器具の扱いが重要か</h2>
+        <div class="card">
+          <ul>
+            <li>
+              誤差の蓄積は <strong>CFU/mL・OD・MIC</strong> の解釈を歪める。
+            </li>
+            <li>
+              安全・清潔操作・再現性（記録）を守ることでデータの信頼性が上がる。
+            </li>
+            <li>
+              器具の選択と姿勢（角度・速度・気泡管理）が “見えない誤差”
+              を減らす。
+            </li>
+          </ul>
+        </div>
+        <div class="note">
+          <strong>Tip:</strong> Step 1（培地）・Step
+          2（測定）と同じく、標準化（SOP）に沿って操作する。
+        </div>
+      </section>
+
+      <!-- 2. ピペットマン（Gilson / Eppendorf） -->
+      <section class="section">
+        <h2>2) ピペットマン（Gilson / Eppendorf）</h2>
+        <div class="two-col">
+          <div class="card icon-bullet">
+            <h3>基本構造と操作</h3>
+            <ul>
+              <li>
+                <strong>プランジャーの1段目</strong>：吸引量の設定・吐出の基準点
+              </li>
+              <li>
+                <strong>2段目</strong
+                >：残液を<strong>吐き切る</strong>ため（吸引では使わない）
+              </li>
+              <li>
+                <strong>ボリュームダイヤル</strong>：設定範囲内で使用（例：P20
+                は 2–20 μL）
+              </li>
+              <li>
+                <strong>チップ装着</strong
+                >：垂直に<strong>軽く押し込み＋ひねり</strong>で密着（過度な打ち込みはNG）
+              </li>
+              <li>
+                <strong>角度</strong
+                >：吸引は垂直、吐出は壁面に当て45°程度でゆっくり
+              </li>
+            </ul>
+          </div>
+          <div class="card icon-bullet">
+            <h3>Gilson と Eppendorf の違い（感覚の目安）</h3>
+            <ul>
+              <li>
+                <strong>クリック感</strong>：Gilson は明確、Eppendorf
+                はやや滑らか
+              </li>
+              <li>
+                <strong>チップ互換性</strong
+                >：メーカー純正を基本、互換は密着確認
+              </li>
+              <li>
+                <strong>校正</strong
+                >：年1回＋落下・高温後は再点検（蒸留水秤量法）
+              </li>
+            </ul>
+            <div class="warn">
+              <strong>注意：</strong
+              >2段目で吸う癖は<strong>過量吸引</strong>の典型。必ず1段目で吸って2段目で吐き切る。
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. モード（S/M/F）＆ マルチチャンネル -->
+      <section class="section">
+        <h2>3) モード操作（S/M/F）とマルチチャンネル</h2>
+        <div class="grid cols-2">
+          <div class="card">
+            <h3>モード比較（機種により名称差あり）</h3>
+            <div class="table-wrapper">
+              <table>
+                <thead>
+                  <tr>
+                    <th>モード</th>
+                    <th>名称</th>
+                    <th>動作</th>
+                    <th>用途</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>S</td>
+                    <td>Standard</td>
+                    <td>通常の吸引・吐出</td>
+                    <td>一般操作</td>
+                  </tr>
+                  <tr>
+                    <td>M</td>
+                    <td>Manual</td>
+                    <td>任意タイミングで操作</td>
+                    <td>特殊サンプル</td>
+                  </tr>
+                  <tr>
+                    <td>F</td>
+                    <td>Fast</td>
+                    <td>連続分注（高速）</td>
+                    <td>96穴など反復操作</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="muted">
+              ※ 実機のダイヤル表記は機種で異なる。必ずマニュアルを確認。
+            </p>
+          </div>
+          <div class="card icon-bullet">
+            <h3>マルチチャンネル（8/12連）</h3>
+            <ul>
+              <li>
+                チップは<strong>均等に奥まで</strong>装着（左右の高さズレは誤差原因）
+              </li>
+              <li>
+                96穴の列/行に<strong>まっすぐ</strong>入れる（斜めから差さない）
+              </li>
+              <li>
+                吐出は<strong>壁面に当てて</strong>ゆっくり、気泡を出さない
+              </li>
+            </ul>
+            <div class="note">
+              <strong>Tip:</strong>
+              事前に「総分注量」を計算し、リザーバーに過不足なく準備。
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. オートピペッター（セロロジカルピペット） -->
+      <section class="section">
+        <h2>4) オートピペッター（Serological Pipette）</h2>
+        <div class="two-col">
+          <div class="card icon-bullet">
+            <h3>基本</h3>
+            <ul>
+              <li>
+                電動式：<strong>吸引ボタン／吐出ボタン</strong>で速度を切替
+              </li>
+              <li>
+                液面に<strong>深く入れすぎない</strong>（気泡混入・過量の原因）
+              </li>
+              <li>
+                ボトル内は<strong>清潔を維持</strong>（口を触れない・逆流させない）
+              </li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>ミニ電卓：プレート総分注量</h3>
+            <div class="calc">
+              <form id="dispenseForm">
+                <div class="grid cols-2">
+                  <div>
+                    <label for="volPerWell">1ウェル体積（μL）</label>
+                    <input
+                      id="volPerWell"
+                      type="number"
+                      min="0"
+                      step="1"
+                      placeholder="例: 100"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label for="wellCount">ウェル数</label>
+                    <input
+                      id="wellCount"
+                      type="number"
+                      min="1"
+                      step="1"
+                      placeholder="例: 96"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="flex-row" style="margin-top: 0.6rem">
+                  <button class="btn" type="submit">計算</button>
+                  <span class="result" id="dispenseResult"></span>
+                </div>
+              </form>
+            </div>
+            <p class="muted">
+              100 μL × 96 well = 9.6 mL（ロス分を考え 10–12 mL 用意など）。
+            </p>
+          </div>
+        </div>
+        <div class="warn" style="margin-top: 0.8rem">
+          <strong>注意：</strong
+          >オートピペッターは<strong>逆流・滴下</strong>に注意。作業後は先端を外し、濡れた面を拭いてから保管。
+        </div>
+      </section>
+
+      <!-- 5. チューブの種類と使い分け -->
+      <section class="section">
+        <h2>5) チューブの種類と使い分け</h2>
+        <div class="grid cols-2">
+          <div class="card">
+            <h3>一覧表</h3>
+            <div class="table-wrapper">
+              <table>
+                <thead>
+                  <tr>
+                    <th>種類</th>
+                    <th>容量</th>
+                    <th>材質</th>
+                    <th>主な用途</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>エッペンチューブ</td>
+                    <td>1.5 / 2.0 mL</td>
+                    <td>PP</td>
+                    <td>小容量試料・ミニ遠心</td>
+                  </tr>
+                  <tr>
+                    <td>セラムチューブ</td>
+                    <td>5–10 mL</td>
+                    <td>ガラス / PS</td>
+                    <td>採血・血清分離</td>
+                  </tr>
+                  <tr>
+                    <td>ファルコンチューブ</td>
+                    <td>15 / 50 mL</td>
+                    <td>PP</td>
+                    <td>培地・大容量遠心</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="card icon-bullet">
+            <h3>取り扱いのコツ</h3>
+            <ul>
+              <li>
+                <strong>フタの閉め方</strong
+                >：クリック感まで確実に（半押しは漏れや汚染の原因）
+              </li>
+              <li>
+                <strong>遠心バランス</strong>：対向で重量一致、ラベルは外側に
+              </li>
+              <li>
+                <strong>耐薬品性</strong
+                >：材質により異なる（溶媒・消毒薬に注意）
+              </li>
+              <li>
+                <strong>保管表示</strong>：名称・日付・作成者・濃度・危険表示
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="note" style="margin-top: 0.8rem">
+          <strong>Tip:</strong>
+          使い分けを迷ったら、まず容量と遠心条件（回転数/時間）で選ぶ。
+        </div>
+      </section>
+
+      <!-- 6. チェックリスト & よくあるミス -->
+      <section class="section">
+        <h2>6) 操作チェックリスト & よくあるミス</h2>
+        <div class="grid cols-2">
+          <div class="card icon-bullet">
+            <h3>操作チェック</h3>
+            <ul>
+              <li>チップ装着は<strong>均一・確実</strong>か</li>
+              <li>吸引は<strong>1段目</strong>のみで行い、気泡がないか確認</li>
+              <li>吐出は<strong>壁面 45°</strong>でゆっくり、残液は2段目で</li>
+              <li>チューブの蓋は<strong>確実に閉鎖</strong>し、ラベルを貼付</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>よくあるミス</h3>
+            <ul>
+              <li>2段目で吸って<strong>過量</strong>になる</li>
+              <li>斜め吸引で<strong>空気混入</strong>・体積不足</li>
+              <li>先端の<strong>吹き飛ばし</strong>で過量吐出</li>
+              <li>遠心の<strong>アンバランス</strong>で漏れ・破損</li>
+            </ul>
+            <div class="danger">
+              <strong>Important:</strong>
+              異常を感じたら<strong>すぐ停止</strong>・相談・記録。無理に続行しない。
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="section" style="text-align: center">
+        <a class="btn" href="../step1/index.html"
+          >↩ Step 1（培地の準備と滅菌）に戻る</a
+        >
+        <a
+          class="btn next"
+          style="margin-left: 0.6rem"
+          href="../step2/index.html"
+          >↩ Step 2（培養と観察）に戻る</a
+        >
+      </section>
+    </main>
+
+    <!-- フッターは common.js が自動挿入します -->
+
+    <script>
+      // プレート総分注量ミニ電卓
+      document
+        .getElementById("dispenseForm")
+        ?.addEventListener("submit", function (e) {
+          e.preventDefault();
+          const v = Number(document.getElementById("volPerWell").value); // μL
+          const n = Number(document.getElementById("wellCount").value);
+          if (!(v >= 0) || !(n >= 1)) return;
+          const total_uL = v * n;
+          const total_mL = total_uL / 1000;
+          const text = `${total_uL.toLocaleString()} μL = ${total_mL.toFixed(
+            2
+          )} mL（ロス分を加えて用意）`;
+          document.getElementById("dispenseResult").textContent = text;
+        });
+    </script>
   </body>
-  <footer></footer>
 </html>
