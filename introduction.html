@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>導入 Introduction | 細菌学実験ガイド</title>
+    <link rel="stylesheet" href="style/common.css" />
+    <script src="js/common.js" defer></script>
+    <style>
+      /* ページ固有の少量スタイル（必要に応じて common.css に移動可） */
+      .hero {
+        text-align: center;
+        padding: 2rem 1rem 1rem;
+      }
+      .hero h2 {
+        margin-bottom: 0.5rem;
+      }
+      .sub {
+        color: #475569;
+        margin-bottom: 1rem;
+      }
+      .rule-grid,
+      .link-grid,
+      .timeline {
+        display: grid;
+        gap: 1rem;
+        margin-top: 1rem;
+      }
+      .rule-grid {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      }
+      .link-grid {
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      }
+      .card,
+      .link-card,
+      .rule-card {
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+        padding: 1rem 1.1rem;
+      }
+      .link-card h3,
+      .rule-card h3 {
+        margin: 0.25rem 0 0.5rem;
+        font-size: 1.05rem;
+      }
+      .link-card a {
+        text-decoration: none;
+        display: inline-block;
+        margin-top: 0.5rem;
+        font-weight: bold;
+        color: #2563eb;
+      }
+      .timeline {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      }
+      .timeline .step {
+        background: #eef2ff;
+        border-left: 4px solid #6366f1;
+        border-radius: 6px;
+        padding: 0.75rem 0.9rem;
+      }
+      .cta {
+        text-align: center;
+        margin-top: 2rem;
+      }
+      .btn {
+        background-color: #2563eb;
+        color: #fff;
+        text-decoration: none;
+        padding: 0.8rem 1.5rem;
+        border-radius: 10px;
+        font-weight: 700;
+        display: inline-block;
+        transition: transform 0.12s, box-shadow 0.12s, background-color 0.12s;
+      }
+      .btn:hover {
+        background-color: #1d4ed8;
+        transform: translateY(-1px);
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+      }
+      .section {
+        margin: 2rem 0;
+      }
+      .section h2 {
+        margin-bottom: 0.4rem;
+      }
+      .en {
+        color: #64748b;
+        font-size: 0.95rem;
+        margin: 0 0 0.8rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>🧫 細菌学実験ガイド / Bacteriology Lab Guide</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">ホーム</a></li>
+          <li><a href="introduction.html" class="active">導入</a></li>
+          <li><a href="steps/step1/index.html">Step 1</a></li>
+          <li><a href="steps/step2/index.html">Step 2</a></li>
+          <li><a href="steps/step3/index.html">Step 3</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <!-- HERO -->
+      <section class="hero">
+        <h2>細菌学を学ぼう、感染症を知ろう</h2>
+        <p class="sub">
+          Let’s learn bacteriology, understand infections, and think with
+          evidence.
+        </p>
+        <p>
+          このページは初学者のための入口です。安全と清潔操作を重視しながら、<br />
+          <strong>準備 → 実験 → 廃棄・片付け → 振り返り → 論文で学ぶ</strong>
+          の流れをつかみます。
+        </p>
+      </section>
+
+      <!-- WHY -->
+      <section class="section">
+        <h2>なぜ学ぶ？ / Why this matters</h2>
+        <p class="en">
+          Understand the “faces” of pathogens to connect classification,
+          clinical features, diagnostics, therapy, and infection control.
+        </p>
+        <ul>
+          <li>
+            病原体の特徴をつかむと、診断・治療・感染対策が一本の線でつながる。
+          </li>
+          <li>国家試験・臨床・研究の土台を作る。</li>
+          <li>論文を読み、エビデンスで考える習慣を身につける。</li>
+        </ul>
+      </section>
+
+      <!-- SAFETY & MINDSET -->
+      <section class="section">
+        <h2>最初に読む：安全と姿勢 / Safety & Mindset</h2>
+        <div class="rule-grid">
+          <div class="rule-card">
+            <h3>安全第一 / Safety first</h3>
+            <p>
+              白衣・手袋・ゴーグル。火傷・突沸・針刺し・爆発に注意。オートクレーブは<strong>圧力ゼロ</strong>で開扉。
+            </p>
+          </div>
+          <div class="rule-card">
+            <h3>清潔操作 / Aseptic technique</h3>
+            <p>
+              滅菌・無菌操作の徹底。キャップは<strong>緩めて滅菌</strong>、固化後は<strong>逆さ保管</strong>。
+            </p>
+          </div>
+          <div class="rule-card">
+            <h3>記録習慣 / Documentation</h3>
+            <p>日付・ロット・条件・観察・失敗も残す。再現性と安全の鍵。</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ROADMAP -->
+      <section class="section">
+        <h2>学びの流れ / Learning Roadmap</h2>
+        <div class="timeline">
+          <div class="step">
+            <strong>1. 概念</strong><br />用語と全体像をつかむ
+          </div>
+          <div class="step">
+            <strong>2. 実技</strong><br />Step 1–3で基本操作
+          </div>
+          <div class="step">
+            <strong>3. 論文</strong><br />タイトル・抄録・図の3点読み
+          </div>
+          <div class="step">
+            <strong>4. クイズ</strong><br />知識を定着・弱点を発見
+          </div>
+          <div class="step"><strong>5. 応用</strong><br />より高度な実験へ</div>
+        </div>
+      </section>
+
+      <!-- LINKS -->
+      <section class="section">
+        <h2>さらに学ぶ（外部・教材リンク） / Resources</h2>
+        <p class="en">
+          Official pages and learning materials. Links open in a new tab.
+        </p>
+        <div class="link-grid">
+          <div class="link-card">
+            <h3>FILGAP</h3>
+            <p>講演・教材の玄関口 / The gateway to talks and materials.</p>
+            <a
+              href="http://filgap.kenkyuukai.jp/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Open FILGAP →</a
+            >
+          </div>
+          <div class="link-card">
+            <h3>FILGAP 特集ページ</h3>
+            <p>特集・資料への近道 / Special collections.</p>
+            <a
+              href="http://filgap.kenkyuukai.jp/special/?id=41988"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Open Special →</a
+            >
+          </div>
+          <div class="link-card">
+            <h3>感染症クイズ</h3>
+            <p>遊びながら理解を確認 / Quiz for quick checks.</p>
+            <a
+              href="https://somekata.github.io/quiz/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Open Quiz →</a
+            >
+          </div>
+          <div class="link-card">
+            <h3>細菌学テキスト</h3>
+            <p>図とストーリーで学ぶ入門書 / Visual, story-based text.</p>
+            <a
+              href="https://somekata.github.io/bacteriologytext/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Open Text →</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- PAPER READING -->
+      <section class="section">
+        <h2>論文を読んで学ぼう / Read papers, learn evidence</h2>
+        <ul>
+          <li>タイトル・抄録を声に出して一言要約（30秒）。</li>
+          <li>図・表は「何を示すか」を一言で説明（1分）。</li>
+          <li>Take-home message を1行で書く（30秒）。</li>
+        </ul>
+        <p class="en">
+          Don’t aim for perfection first. Aim for one clear takeaway.
+        </p>
+      </section>
+
+      <!-- CTA -->
+      <section class="cta section">
+        <a class="btn" href="steps/step1/index.html"
+          >▶ Step 1（MHIIの調製）へ進む / Go to Step 1</a
+        >
+      </section>
+    </main>
+    <!-- フッターは common.js が自動挿入します -->
+  </body>
+</html>

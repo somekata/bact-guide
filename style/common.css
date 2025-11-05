@@ -1,0 +1,95 @@
+/* --- 全体レイアウト --- */
+body {
+  font-family: "Noto Sans JP", sans-serif;
+  line-height: 1.8;
+  background-color: #f9fafb;
+  color: #1f2937;
+  margin: 0;
+}
+
+/* --- ヘッダーとナビゲーション --- */
+header {
+  background: #0f172a;
+  color: white;
+  padding: 1rem;
+}
+
+header h1 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.5rem;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+nav a {
+  color: #cbd5e1;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+  color: #38bdf8;
+}
+
+/* --- メインコンテンツ --- */
+main {
+  padding: 2rem;
+  max-width: 900px;
+  margin: auto;
+}
+
+.intro {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.steps {
+  text-align: center;
+}
+
+.step-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.step-card {
+  display: block;
+  width: 200px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  text-decoration: none;
+  color: #1f2937;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.step-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.step-card h3 {
+  margin: 0.5rem 0;
+  color: #2563eb;
+}
+
+/* --- フッター --- */
+footer {
+  background: #1e293b;
+  color: #cbd5e1;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+}

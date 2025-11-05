@@ -1,0 +1,200 @@
+/* =========================================================
+   Steps 共通スタイル
+   対象: steps/step1, step2, step3 など実験手順ページ
+   ========================================================= */
+
+/* --- レイアウト基本 --- */
+main {
+  padding: 2rem 1rem;
+  max-width: 900px;
+  margin: auto;
+  line-height: 1.8;
+}
+
+/* --- セクション共通 --- */
+.section {
+  margin: 2rem 0;
+}
+.section h2 {
+  margin-bottom: 0.6rem;
+  border-left: 6px solid #2563eb;
+  padding-left: 0.6rem;
+  color: #1e293b;
+}
+
+/* --- グリッド構成 --- */
+.grid {
+  display: grid;
+  gap: 1rem;
+}
+.grid.cols-2 {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+/* --- カード --- */
+.card {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding: 1rem 1.2rem;
+}
+.card h3 {
+  margin-top: 0;
+  color: #2563eb;
+}
+.card ul {
+  padding-left: 1.2rem;
+  margin: 0.5rem 0;
+}
+
+/* --- 注意・補足枠 --- */
+.note {
+  background: #eef2ff;
+  border-left: 4px solid #6366f1;
+  padding: 0.8rem 1rem;
+  border-radius: 6px;
+  margin-top: 0.8rem;
+}
+.warn {
+  background: #fef3c7;
+  border-left: 4px solid #f59e0b;
+  padding: 0.8rem 1rem;
+  border-radius: 6px;
+  margin-top: 0.8rem;
+}
+.danger {
+  background: #fee2e2;
+  border-left: 4px solid #ef4444;
+  padding: 0.8rem 1rem;
+  border-radius: 6px;
+  margin-top: 0.8rem;
+}
+
+/* --- 数式・コード表記 --- */
+.formula {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+  background: #f8fafc;
+  border: 1px dashed #cbd5e1;
+  padding: 0.6rem 0.8rem;
+  border-radius: 8px;
+  overflow-x: auto;
+  margin: 0.5rem 0;
+}
+
+/* --- ミニフォーム / 電卓用 --- */
+.calc form {
+  display: grid;
+  gap: 0.6rem;
+}
+.calc label {
+  font-weight: 600;
+}
+.calc input,
+.calc select {
+  padding: 0.5rem 0.6rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  width: 100%;
+  font-size: 1rem;
+}
+.flex-row {
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.result {
+  font-weight: 700;
+  color: #0f172a;
+}
+
+/* --- 折りたたみ例題 --- */
+details {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 0.5rem 0.8rem;
+}
+details > summary {
+  cursor: pointer;
+  font-weight: 700;
+  color: #1e293b;
+}
+details[open] {
+  background: #ffffff;
+}
+
+/* --- ボタン --- */
+.btn {
+  background-color: #2563eb;
+  color: white;
+  text-decoration: none;
+  padding: 0.7rem 1.2rem;
+  border-radius: 8px;
+  display: inline-block;
+  font-weight: 600;
+  transition: background-color 0.2s, transform 0.1s, box-shadow 0.1s;
+}
+.btn:hover {
+  background-color: #1d4ed8;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+.btn.next {
+  background-color: #16a34a;
+}
+.btn.next:hover {
+  background-color: #15803d;
+}
+.btn.ghost {
+  background-color: #0f172a;
+}
+.btn.ghost:hover {
+  background-color: #1e293b;
+}
+
+/* --- Hero セクション --- */
+.hero {
+  text-align: center;
+  padding: 1.6rem 0.8rem;
+}
+.hero h2 {
+  margin: 0 0 0.4rem;
+  color: #1e293b;
+}
+.hero p {
+  margin: 0.2rem 0;
+  color: #475569;
+}
+
+/* --- muted テキスト --- */
+.muted {
+  color: #64748b;
+}
+
+/* --- 表組み（将来の記録テンプレ用） --- */
+.table-wrapper {
+  overflow-x: auto;
+  margin-top: 0.8rem;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 0.95rem;
+}
+th, td {
+  border: 1px solid #e2e8f0;
+  padding: 0.4rem 0.6rem;
+  text-align: center;
+}
+th {
+  background: #f1f5f9;
+  font-weight: 700;
+}
+
+/* --- メディアクエリ：スマホ調整 --- */
+@media (max-width: 600px) {
+  main { padding: 1rem; }
+  .section h2 { font-size: 1.1rem; }
+  .btn { width: 100%; text-align: center; }
+}

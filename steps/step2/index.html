@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Step 1: MHIIの調製（液体/寒天）| 細菌学実験ガイド</title>
+    <link rel="stylesheet" href="../../style/common.css" />
+    <link rel="stylesheet" href="../common.css" />
+    <script src="../../js/common.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <h1>
+        🧪 Step 2: 数える・量る・効きを測る / Count, Quantify, and Measure
+        Susceptibility
+      </h1>
+      <nav>
+        <ul>
+          <li><a href="../../index.html">ホーム</a></li>
+          <li><a href="../../introduction.html">導入</a></li>
+          <li><a href="../step1/index.html">Step 1</a></li>
+          <li><a href="../step2/index.html" class="active">Step 2</a></li>
+          <li><a href="../step3/index.html">Step 3</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <!-- HERO -->
+      <section class="hero">
+        <h2>CFU・OD・MIC（微量液体希釈法/Etest）と Growth/Killing Curve</h2>
+        <p>
+          CFU/mL の求め方、OD600 の読み方、MIC
+          の概念、時間経過の増殖/殺菌をまとめて学ぶ。
+        </p>
+      </section>
+
+      <!-- CFU 基礎 -->
+      <section class="section">
+        <h2>1) CFU（Colony Forming Unit）とは</h2>
+        <div class="grid cols-2">
+          <div class="card">
+            <p>
+              <strong>定義：</strong
+              >平板上の可視コロニー数。生残可能な細胞（または集塊）1つが 1 CFU
+              とみなされる。
+            </p>
+            <ul>
+              <li>目的：原液の<strong>濃度（CFU/mL）</strong>を求める。</li>
+              <li>
+                操作のコツ：<strong>30–300</strong> コロニーの範囲でカウント。
+              </li>
+              <li>
+                希釈系列：通常は
+                <strong>10倍系列（10^-1, 10^-2, ...）</strong>。
+              </li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>計算式 / Formula</h3>
+            <div class="formula">
+              CFU/mL = (コロニー数) ÷ (塗布量 mL) × (希釈倍率の逆数)<br />
+              e.g.) plate 50 μL (=0.05 mL), 10^-3 のプレートで 121 colonies →<br />
+              CFU/mL = 121 ÷ 0.05 × 10^3 = <strong>2.42×10^6 CFU/mL</strong>
+            </div>
+            <p class="muted">※ “希釈倍率の逆数”は 10^-3 なら 10^3 を掛ける。</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 希釈→CFU 電卓 -->
+      <section class="section calc">
+        <h2>CFU/mL 計算ミニツール / CFU Calculator</h2>
+        <div class="card">
+          <form id="cfuForm">
+            <div class="grid cols-2">
+              <div>
+                <label for="plateCount">コロニー数（colonies）</label>
+                <input
+                  id="plateCount"
+                  type="number"
+                  min="0"
+                  step="1"
+                  placeholder="例: 121"
+                  required
+                />
+              </div>
+              <div>
+                <label for="platedVolume">塗布量 mL（e.g. 50μL→0.05）</label>
+                <input
+                  id="platedVolume"
+                  type="number"
+                  min="0"
+                  step="0.0001"
+                  placeholder="例: 0.05"
+                  required
+                />
+              </div>
+              <div>
+                <label for="dilutionExp">希釈指数（10^-n の n）</label>
+                <input
+                  id="dilutionExp"
+                  type="number"
+                  min="0"
+                  step="1"
+                  placeholder="例: 3（=10^-3）"
+                  required
+                />
+              </div>
+            </div>
+            <div class="flex-row">
+              <button class="btn" type="submit">計算する</button>
+              <span class="result" id="cfuResult"></span>
+            </div>
+          </form>
+        </div>
+        <div class="note" style="margin-top: 0.8rem">
+          <strong>Tip:</strong> 30–300
+          の範囲を狙う。範囲外なら希釈や塗布量を調整して再計測。
+        </div>
+      </section>
+
+      <!-- OD 基礎 -->
+      <section class="section">
+        <h2>2) OD（Absorbance）で濁度を測る / OD600</h2>
+        <div class="grid cols-2">
+          <div class="card">
+            <ul>
+              <li>
+                波長は <strong>600–630 nm</strong>（本サイトでは
+                <strong>OD600</strong> を想定）。
+              </li>
+              <li>
+                目安の線形範囲は
+                <strong>0.1–1.0</strong>（0.1未満・1超は誤差増大）。
+              </li>
+              <li>
+                経験則：<strong>OD600 = 1 ≈ 1×10^9 CFU/mL</strong
+                >（菌種・装置差あり → 標準曲線の作成を推奨）。
+              </li>
+              <li>McFarland 0.5 ≈ およそ <strong>OD600 ~ 0.1</strong>。</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>例題 / Example</h3>
+            <p>
+              <strong>問題：</strong>菌液 X を 1/20 に希釈して
+              <strong>OD600=0.132</strong>。原液の概算菌数は？
+            </p>
+            <div class="formula">
+              原液換算 OD = 0.132 × 20 = 2.64<br />
+              概算菌数 ≈ 2.64 × 10^9 CFU/mL
+            </div>
+            <p class="warn">
+              <strong>注意：</strong>OD&gt;1
+              は非線形になりやすい。再度希釈し直して 0.1–1.0 の範囲で読み直す。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- OD→CFU 電卓 -->
+      <section class="section calc">
+        <h2>OD から概算 CFU/mL を求める / OD→CFU Estimator</h2>
+        <div class="card">
+          <form id="odForm">
+            <div class="grid cols-2">
+              <div>
+                <label for="measuredOD">測定 OD（ブランク差引後）</label>
+                <input
+                  id="measuredOD"
+                  type="number"
+                  min="0"
+                  step="0.0001"
+                  placeholder="例: 0.132"
+                  required
+                />
+              </div>
+              <div>
+                <label for="dilutionFold">希釈倍率（原液/測定液）</label>
+                <input
+                  id="dilutionFold"
+                  type="number"
+                  min="1"
+                  step="1"
+                  placeholder="例: 20"
+                  required
+                />
+              </div>
+              <div>
+                <label for="odOneBillion">換算係数（OD=1 → n×10^9）</label>
+                <select id="odOneBillion">
+                  <option value="1">1×10^9（一般的仮定）</option>
+                  <option value="0.8">0.8×10^9</option>
+                  <option value="1.2">1.2×10^9</option>
+                </select>
+              </div>
+            </div>
+            <div class="flex-row">
+              <button class="btn" type="submit">見積もる</button>
+              <span class="result" id="odResult"></span>
+            </div>
+          </form>
+        </div>
+        <div class="note" style="margin-top: 0.8rem">
+          <strong>Tip:</strong>
+          ラボごとの<strong>標準曲線</strong>を作って係数を調整すると精度が上がる。
+        </div>
+      </section>
+
+      <!-- MIC 概念 -->
+      <section class="section">
+        <h2>3) MIC（最小発育阻止濃度）/ Microdilution & Etest</h2>
+        <div class="grid cols-2">
+          <div class="card">
+            <h3>微量液体希釈法 / Broth Microdilution</h3>
+            <ul>
+              <li>
+                2倍希釈系列（96穴）を作成し、規定の
+                <strong>inoculum</strong> を各孔へ接種。
+              </li>
+              <li>
+                一定時間培養後、<strong>“発育を認めない”最小濃度</strong>を MIC
+                と判定。
+              </li>
+              <li>
+                培地・温度・時間・inoculum を標準化（Step 1 の MHII と連携）。
+              </li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Etest（濃度グラデ棒）</h3>
+            <ul>
+              <li>MHII 寒天平板に菌液を均一塗布し、Etest ストリップを貼付。</li>
+              <li>
+                <strong>椀形阻止帯の交点</strong>が
+                MIC（端数処理のルールに注意）。
+              </li>
+              <li>
+                判定の個人差を避けるため<strong>ダブルチェック</strong>推奨。
+              </li>
+            </ul>
+          </div>
+        </div>
+        <p class="danger" style="margin-top: 0.8rem">
+          <strong>Important:</strong> MIC は
+          <em>inoculum effect</em>
+          の影響を受けます。接種菌量が変わるとMICも動くため、手順書通りの濃度・体積・時間を厳守してください。
+        </p>
+      </section>
+
+      <!-- Growth / Killing -->
+      <section class="section">
+        <h2>4) Growth curve と Killing curve</h2>
+        <div class="grid cols-2">
+          <div class="card">
+            <h3>Growth curve</h3>
+            <p>
+              N(t) = N0 · 2^(t/td)（td: 倍化時間）。<br />例：「約2時間で10倍」は経験則として把握（※菌種・環境で変動）。
+            </p>
+            <ul>
+              <li>
+                <strong>設計：</strong>初期菌量（接種菌量）を決め、2–3時間おきに
+                OD と/または CFU を測定。
+              </li>
+              <li>
+                <strong>プロット：</strong
+                >縦軸ログで直線性を確認。対数期・定常期の判定。
+              </li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Killing curve（薬剤存在下）</h3>
+            <ul>
+              <li>薬剤濃度ごとに時間経過で CFU を測定し、殺菌速度を比較。</li>
+              <li>時間依存/濃度依存の違いを可視化。</li>
+              <li>
+                OD だけだと死菌を拾うことがあるため、可能なら CFU 測定も併用。
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="note" style="margin-top: 0.8rem">
+          <strong>Tip:</strong>
+          外れ値は「希釈・塗布量・タイミング・混合不足」を疑い、記録から原因を追跡する。
+        </div>
+      </section>
+
+      <!-- 例題（折りたたみ） -->
+      <section class="section">
+        <h2>例題 / Worked Examples</h2>
+        <div class="grid cols-2">
+          <div class="card">
+            <details>
+              <summary>例題1：CFU/mL を求める（10倍系列・50μL播種）</summary>
+              <p class="muted">
+                濃度不明の菌液X。1/10
+                系列を作成し、<strong>3つ目（10^-3）</strong>の希釈液から
+                <strong>50 μL</strong> を播種。<strong>121 colonies</strong>
+                を得た。原液の CFU/mL は？
+              </p>
+              <div class="formula">
+                CFU/mL = 121 ÷ 0.05 × 10^3 = <strong>2.42×10^6 CFU/mL</strong>
+              </div>
+            </details>
+          </div>
+          <div class="card">
+            <details>
+              <summary>
+                例題2：OD から概算 CFU/mL（1/20 希釈，OD600=0.132）
+              </summary>
+              <p class="muted">
+                原液換算 OD = 0.132 × 20 = 2.64 ⇒ 概算 CFU ≈ 2.64×10^9 CFU/mL
+              </p>
+              <div class="warn">
+                <strong>注意：</strong>OD&gt;1
+                は非線形に入りやすいため、再度希釈して 0.1–1.0 の範囲で測る。
+              </div>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="section" style="text-align: center">
+        <a class="btn" href="../step3/index.html"
+          >▶ Step 3 へ進む / Go to Step 3</a
+        >
+        <a
+          class="btn ghost"
+          style="margin-left: 0.6rem"
+          href="../step1/index.html"
+          >↩ Step 1 に戻る</a
+        >
+      </section>
+    </main>
+
+    <!-- フッターは common.js が自動挿入します -->
+
+    <script>
+      // ---- ページ内ミニ電卓 ----
+      // CFU calculator
+      document
+        .getElementById("cfuForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          const n = Number(document.getElementById("plateCount").value);
+          const vol = Number(document.getElementById("platedVolume").value); // mL
+          const exp = Number(document.getElementById("dilutionExp").value); // 10^-exp
+          if (!(n >= 0) || !(vol > 0) || !(exp >= 0)) return;
+
+          const dilutionInverse = Math.pow(10, exp); // 10^exp
+          const cfuPerMl = (n / vol) * dilutionInverse;
+          const text = numberSci(cfuPerMl) + " CFU/mL";
+          document.getElementById("cfuResult").textContent = text;
+        });
+
+      // OD -> CFU estimator
+      document
+        .getElementById("odForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          const od = Number(document.getElementById("measuredOD").value);
+          const fold = Number(document.getElementById("dilutionFold").value);
+          const coef = Number(document.getElementById("odOneBillion").value); // in billions
+          if (!(od >= 0) || !(fold >= 1)) return;
+
+          const odOriginal = od * fold;
+          const cfuPerMl = odOriginal * (coef * 1e9);
+          const text =
+            "原液換算OD: " +
+            round3(odOriginal) +
+            " → 概算 " +
+            numberSci(cfuPerMl) +
+            " CFU/mL";
+          document.getElementById("odResult").textContent = text;
+        });
+
+      function numberSci(x) {
+        if (x === 0) return "0";
+        const exp = Math.floor(Math.log10(Math.abs(x)));
+        const mant = x / Math.pow(10, exp);
+        return mant.toFixed(2) + "×10^" + exp;
+      }
+      function round3(x) {
+        return Math.round(x * 1000) / 1000;
+      }
+    </script>
+  </body>
+</html>
