@@ -167,6 +167,7 @@
                   type="number"
                   min="0"
                   step="1"
+                  value="50"
                   placeholder="例: 121"
                   required
                 />
@@ -177,7 +178,8 @@
                   id="platedVolume"
                   type="number"
                   min="0"
-                  step="0.0001"
+                  step="0.01"
+                  value="0.05"
                   placeholder="例: 0.05"
                   required
                 />
@@ -189,6 +191,7 @@
                   type="number"
                   min="0"
                   step="1"
+                  value="3"
                   placeholder="例: 3（=10^-3）"
                   required
                 />
@@ -224,7 +227,11 @@
                 経験則：<strong>OD600 = 1 ≈ 1×10^9 CFU/mL</strong
                 >（菌種・装置差あり → 標準曲線の作成を推奨）。
               </li>
-              <li>McFarland 0.5 ≈ およそ <strong>OD600 ~ 0.1</strong>。</li>
+              <li>
+                McFarland 0.5 ≈ およそ
+                <strong>OD600 ~ 0.1</strong
+                >で、一般細菌の場合にはおよそ1～2x10^8 CFU/mLの菌数に相当。
+              </li>
             </ul>
           </div>
           <div class="card">
@@ -257,7 +264,8 @@
                   id="measuredOD"
                   type="number"
                   min="0"
-                  step="0.0001"
+                  step="0.001"
+                  value="0.2"
                   placeholder="例: 0.132"
                   required
                 />
@@ -269,6 +277,7 @@
                   type="number"
                   min="1"
                   step="1"
+                  value="10"
                   placeholder="例: 20"
                   required
                 />
@@ -311,6 +320,11 @@
               </li>
               <li>
                 培地・温度・時間・inoculum を標準化（Step 1 の MHII と連携）。
+              </li>
+              <li>
+                接種菌量（96wellの微量液体希釈法）<br />
+                一般細菌：5 x 10^5 CFU/mL（2 - 8 x 10^5 CFU/mL）<br />
+                酵母： 0.5 - 2.5 x 10^3 CFU/mL<br />
               </li>
             </ul>
           </div>
