@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <title>MIC測定プロトコール（CLSI準拠ひな型）</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      :root {
+        --bg: #f5f5f7;
+        --card: #ffffff;
+        --accent: #2563eb;
+        --accent-soft: #e0ecff;
+        --border: #d4d4dd;
+        --text-main: #111827;
+        --text-sub: #4b5563;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        line-height: 1.6;
+        background: var(--bg);
+        color: var(--text-main);
+      }
+
+      .wrapper {
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 24px 16px 40px;
+      }
+
+      header {
+        background: linear-gradient(135deg, #1d4ed8, #0ea5e9);
+        color: #fff;
+        padding: 20px 24px;
+        border-radius: 16px;
+        box-shadow: 0 14px 35px rgba(15, 23, 42, 0.35);
+        margin-bottom: 24px;
+      }
+
+      header h1 {
+        margin: 0 0 4px;
+        font-size: 1.6rem;
+        letter-spacing: 0.03em;
+      }
+
+      header p {
+        margin: 2px 0;
+        font-size: 0.9rem;
+        opacity: 0.9;
+      }
+
+      .tagline {
+        font-size: 0.85rem;
+        opacity: 0.9;
+      }
+
+      .no-print-toolbar {
+        display: flex;
+        justify-content: flex-end;
+        gap: 8px;
+        margin-bottom: 12px;
+      }
+
+      .no-print {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 6px 12px;
+        font-size: 0.85rem;
+        border-radius: 999px;
+        border: 1px solid var(--border);
+        background: #ffffff;
+        color: var(--text-sub);
+        cursor: pointer;
+        box-shadow: 0 4px 10px rgba(15, 23, 42, 0.08);
+      }
+
+      .no-print span.icon {
+        font-size: 1.1rem;
+      }
+
+      main {
+        background: var(--card);
+        border-radius: 16px;
+        padding: 20px 18px 32px;
+        box-shadow: 0 12px 30px rgba(15, 23, 42, 0.18);
+      }
+
+      h2 {
+        margin-top: 1.4em;
+        margin-bottom: 0.4em;
+        font-size: 1.3rem;
+        border-left: 4px solid var(--accent);
+        padding-left: 10px;
+      }
+
+      h3 {
+        margin-top: 1.1em;
+        margin-bottom: 0.3em;
+        font-size: 1.05rem;
+        color: #111827;
+      }
+
+      p {
+        margin: 0.2em 0 0.4em;
+        font-size: 0.92rem;
+      }
+
+      ul,
+      ol {
+        margin: 0.1em 0 0.5em 1.3em;
+        padding: 0;
+        font-size: 0.9rem;
+      }
+
+      li {
+        margin: 0.1em 0;
+      }
+
+      .note {
+        border-left: 3px solid var(--accent);
+        background: var(--accent-soft);
+        padding: 6px 10px;
+        border-radius: 6px;
+        font-size: 0.86rem;
+        color: var(--text-sub);
+        margin: 0.5em 0;
+      }
+
+      .pill {
+        display: inline-block;
+        padding: 2px 8px;
+        border-radius: 999px;
+        font-size: 0.75rem;
+        background: #eff6ff;
+        color: #1d4ed8;
+        border: 1px solid #bfdbfe;
+        margin-left: 6px;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 0.4em 0 0.6em;
+        font-size: 0.85rem;
+      }
+
+      th,
+      td {
+        border: 1px solid #e5e7eb;
+        padding: 4px 6px;
+        vertical-align: top;
+      }
+
+      th {
+        background: #f3f4f6;
+        font-weight: 600;
+        text-align: left;
+      }
+
+      .subtle {
+        color: var(--text-sub);
+        font-size: 0.85rem;
+      }
+
+      .section-card {
+        border-radius: 10px;
+        border: 1px solid #e5e7eb;
+        padding: 10px 12px;
+        margin: 0.6em 0;
+        background: #fcfcff;
+      }
+
+      .page-break {
+        height: 0;
+        margin: 0;
+        border: none;
+        page-break-before: always;
+      }
+
+      footer {
+        margin-top: 18px;
+        border-top: 1px dashed #d4d4dd;
+        padding-top: 6px;
+        font-size: 0.75rem;
+        color: var(--text-sub);
+        text-align: right;
+      }
+
+      /* 印刷用設定 */
+      @page {
+        size: A4 portrait;
+        margin: 10mm 10mm 15mm 10mm;
+      }
+
+      @media print {
+        body {
+          background: #ffffff;
+        }
+        .wrapper {
+          max-width: 100%;
+          padding: 0;
+        }
+        header {
+          border-radius: 0;
+          box-shadow: none;
+          margin-bottom: 8px;
+        }
+        main {
+          border-radius: 0;
+          box-shadow: none;
+          padding: 8mm 8mm 10mm;
+        }
+        .no-print {
+          display: none !important;
+        }
+        .no-print-toolbar {
+          display: none !important;
+        }
+        .page-break {
+          page-break-before: always;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>MIC測定プロトコール（CLSI準拠＋ラボひな型）</h1>
+        <p>
+          Broth microdilution（M07 /
+          M27）を前提にした、菌種別条件と実験手順のテンプレート。
+        </p>
+        <p class="tagline">
+          ※各施設の標準作業手順書（SOP）に合わせて数値・菌名等を書き換えて使用してください。
+        </p>
+      </header>
+
+      <div class="no-print-toolbar">
+        <button class="no-print" type="button" onclick="window.print()">
+          <span class="icon">🖨️</span><span>PDF／印刷</span>
+        </button>
+      </div>
+
+      <main>
+        <!-- =========================
+           1. CLSI準拠の前提条件
+           ========================= -->
+        <section id="clsi-overview">
+          <h2>1. CLSI準拠：菌種別の標準条件（M07 / M27）</h2>
+
+          <h3>1.1 菌種別：培地と接種菌量の目安</h3>
+          <div class="note">
+            ここは CL<span style="font-variant: small-caps">SI</span>
+            の標準法をベースにした「前提条件」です。<br />
+            実際の判定は、最新の M100
+            ブレイクポイントと施設SOPを優先してください。
+          </div>
+
+          <div class="section-card">
+            <strong
+              >1）グラム陽性球菌（Staphylococcus / Streptococcus など）</strong
+            >
+            <table>
+              <thead>
+                <tr>
+                  <th>菌種</th>
+                  <th>培地</th>
+                  <th>補足</th>
+                  <th>接種菌量（最終）</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Staphylococcus spp.</strong></td>
+                  <td>CAMHB（Cation-Adjusted Mueller–Hinton Broth）</td>
+                  <td>
+                    通常の MIC 測定は CAMHB。<br />Oxacillin による mecA
+                    などの検出時は後述の「2% NaCl 添加」を使用。
+                  </td>
+                  <td rowspan="3">
+                    おおよそ<br /><strong>5 × 10<sup>5</sup> CFU/mL</strong
+                    ><br />（ウェル内最終濃度）
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>Streptococcus pneumoniae</strong></td>
+                  <td>CAMHB + 2–5% 溶血馬血液（Lysed Horse Blood, LHB）</td>
+                  <td>いわゆる CAMHB-LHB。肺炎球菌などの栄養要求性に配慮。</td>
+                </tr>
+                <tr>
+                  <td><strong>その他連鎖球菌・腸球菌</strong></td>
+                  <td>CAMHB（必要に応じ 5% LHB）</td>
+                  <td>一部薬剤では血液添加が推奨される。</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="section-card">
+            <strong
+              >2）グラム陰性桿菌（Enterobacterales / Pseudomonas など）</strong
+            >
+            <table>
+              <thead>
+                <tr>
+                  <th>菌種</th>
+                  <th>培地</th>
+                  <th>補足</th>
+                  <th>接種菌量（最終）</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <strong>Enterobacterales</strong
+                    ><br />（大腸菌・肺炎桿菌など）
+                  </td>
+                  <td>CAMHB</td>
+                  <td>標準的な非要求性グラム陰性桿菌。</td>
+                  <td rowspan="2">
+                    おおよそ<br /><strong>5 × 10<sup>5</sup> CFU/mL</strong>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <strong>Non-fermenters</strong><br />（Pseudomonas
+                    aeruginosa, Acinetobacter spp. など）
+                  </td>
+                  <td>CAMHB（セフィデロコールは後述の ID-CAMHB）</td>
+                  <td>
+                    Ca<sup>2+</sup> / Mg<sup>2+</sup>
+                    濃度に感受性が影響しやすいので注意。
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="section-card">
+            <strong>3）酵母（Candida spp. など）</strong>
+            <table>
+              <thead>
+                <tr>
+                  <th>菌種</th>
+                  <th>培地</th>
+                  <th>補足</th>
+                  <th>接種菌量（最終）</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Candida spp.</strong></td>
+                  <td>RPMI 1640（MOPS 緩衝，pH 7.0，グルコース 0.2%）</td>
+                  <td>CLSI M27 準拠。フェノールレッドなし。</td>
+                  <td rowspan="2">
+                    おおよそ<br /><strong
+                      >0.5–2.5 × 10<sup>3</sup> CFU/mL</strong
+                    >
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>Cryptococcus spp. など</strong></td>
+                  <td>同じく RPMI 1640 ベース</td>
+                  <td>判定時間や温度は M27 に準拠。</td>
+                </tr>
+              </tbody>
+            </table>
+            <p class="subtle">※酵母は細菌より 2桁程度少ない接種量が標準。</p>
+          </div>
+
+          <h3>1.2 CLSI M07（細菌）と M27（酵母）の判定基準の違い</h3>
+
+          <div class="section-card">
+            <strong>1）細菌（M07）</strong>
+            <span class="pill">Broth microdilution</span>
+            <ul>
+              <li>
+                判定時間：通常 16–20時間（多くの好気性グラム陽性・陰性菌）。
+              </li>
+              <li>
+                <strong>エンドポイント：</strong
+                >肉眼的に<strong>完全に発育が抑制されている</strong>最小濃度が
+                MIC。
+              </li>
+              <li>
+                「少しでも濁りが残るウェル」は発育ありと判定する（ポツポツした沈渣も含めて要注意）。
+              </li>
+            </ul>
+          </div>
+
+          <div class="section-card">
+            <strong>2）酵母（M27）</strong>
+            <span class="pill">Candida / RPMI 1640</span>
+            <ul>
+              <li>
+                判定時間：<strong>24時間時点</strong>の評価が基本（特にアゾール系など）。
+              </li>
+              <li>
+                <strong>アゾール系・フルシトシン：</strong
+                >薬剤なし対照と比較して<strong>約 50% の発育低下</strong
+                >が見られる最小濃度を MIC とする。
+              </li>
+              <li>
+                <strong>アムホテリシンB：</strong>細菌と同様に<strong
+                  >完全発育抑制（100% inhibition）</strong
+                >をエンドポイントとする。
+              </li>
+            </ul>
+            <p class="subtle">
+              ※48時間まで延長するとトレイルが増えて判定がぶれるため、24時間読みが推奨される場面が多い。
+            </p>
+          </div>
+
+          <h3>1.3 Candida の「トレイル現象（trailing）」への注意</h3>
+
+          <div class="section-card">
+            <p>
+              アゾール系薬剤と Candida spp.
+              の組み合わせでは、濃度が上がっても「完全には消えずに弱い濁りがダラダラ続く」<strong
+                >trailing endpoint</strong
+              >
+              がしばしば問題になります。
+            </p>
+            <ul>
+              <li>
+                24時間時点で、薬剤なし対照と比較して<strong
+                  >明らかに 50% 未満の発育</strong
+                >になったウェルをエンドポイントとする。
+              </li>
+              <li>
+                48時間まで延長すると、MIC が
+                2〜3段階高く見えることがあるため、<strong>読み時間を決めておく</strong>ことが重要。
+              </li>
+              <li>
+                「完全に透明になる濃度」ではなく、あくまで<strong
+                  >50% 減少（prominent reduction）</strong
+                >を基準とする点が、M07との最大の違い。
+              </li>
+            </ul>
+            <p class="subtle">
+              ※トレイルが強い株では、報告前に別日再測定や別ロット培地での確認も検討する。
+            </p>
+          </div>
+
+          <h3>1.4 Staphylococcus における NaCl 添加（Oxacillin）</h3>
+
+          <div class="section-card">
+            <p>
+              メチシリン耐性の判定（mecA など）目的で Oxacillin MIC
+              を測定する際、CLSI M07/M100 では次のように規定されています：
+            </p>
+            <ul>
+              <li><strong>培地：</strong>CAMHB + <strong>2% NaCl</strong></li>
+              <li>
+                対象：<strong
+                  >Staphylococcus aureus / S. lugdunensis / 一部コアグラーゼ陰性
+                  Staphylococcus</strong
+                >
+                など。
+              </li>
+              <li>
+                NaCl 添加により mecA
+                発現が誘導され、耐性が明確になりやすい（偽感受性を減らす）。
+              </li>
+            </ul>
+            <p class="subtle">
+              ※通常の広域薬剤パネル用 MIC 測定は NaCl 無添加 CAMHB でよく、<br />
+              「mecA など耐性機構の確認目的」で別途 2% NaCl
+              条件を用いるイメージ。
+            </p>
+          </div>
+
+          <h3>
+            1.5 緑膿菌とピペラシリン類：CAMHB の Ca<sup>2+</sup> / Mg<sup
+              >2+</sup
+            >
+            濃度
+          </h3>
+
+          <div class="section-card">
+            <p>
+              <strong>Pseudomonas aeruginosa</strong>
+              に対するカルボキシ／ウレイドペニシリン（ピペラシリン，ピペラシリン／タゾバクタムなど）の
+              MIC は、 CAMHB 中の
+              <strong>Ca<sup>2+</sup> / Mg<sup>2+</sup> 濃度</strong>
+              に大きく影響されます。
+            </p>
+            <ul>
+              <li>
+                CLSI が推奨する CAMHB 中の濃度目安：
+                <ul>
+                  <li>Ca<sup>2+</sup>：<strong>20–25 mg/L</strong></li>
+                  <li>Mg<sup>2+</sup>：<strong>10–12.5 mg/L</strong></li>
+                </ul>
+              </li>
+              <li>
+                これより高すぎると、特に P. aeruginosa に対する βラクタム系の
+                MIC が「見かけ上高く」出ることがある。
+              </li>
+              <li>
+                市販 CAMHB を使う場合は、メーカーが「CLSI
+                推奨のカチオン濃度」に調整済みか確認しておくと安心。
+              </li>
+            </ul>
+            <p class="subtle">
+              ※緑膿菌＋ピペラシリン類のデータ解釈では、「培地ロットによるブレ」がないか
+              QC 株（P. aeruginosa ATCC 27853 など）で定期確認する。
+            </p>
+          </div>
+
+          <h3>1.6 鉄取り込み薬（セフィデロコール）の ID-CAMHB 使用</h3>
+
+          <div class="section-card">
+            <p>
+              セフィデロコール（cefiderocol）はシデロフォア型セフェムであり、<strong>低鉄環境</strong>を模倣した培地で真の活性が評価されます。
+              CLSI/ISO では、リファレンス法として
+              <strong
+                >Iron-depleted Cation-adjusted Mueller–Hinton
+                Broth（ID-CAMHB）</strong
+              >
+              を使用することが推奨されています。
+            </p>
+            <ul>
+              <li>
+                <strong>調製の概略：</strong>
+                <ul>
+                  <li>
+                    通常の CAMHB
+                    から鉄および多価金属カチオンをキレート剤で除去。
+                  </li>
+                  <li>
+                    その後、Ca<sup>2+</sup>（20–25
+                    mg/L）、Mg<sup>2+</sup>（10–12.5
+                    mg/L）、Zn<sup>2+</sup>（0.5–1.0 mg/L）などを再添加。
+                  </li>
+                  <li>
+                    最終的な鉄濃度：<strong>&lt; 0.03 mg/L</strong> 程度を目安。
+                  </li>
+                </ul>
+              </li>
+              <li>
+                通常の CAMHB で測定すると MIC
+                が過大評価されることがあり、ブレイクポイントとの整合性が取れない。
+              </li>
+              <li>
+                日常検査で ID-CAMHB を自前調製するのは負担が大きいため、市販
+                ID-CAMHB キットを用いることも選択肢。
+              </li>
+            </ul>
+            <p class="subtle">
+              ※セフィデロコールのみ ID-CAMHB、他剤は通常
+              CAMHB…という使い分けになる。
+            </p>
+          </div>
+        </section>
+
+        <hr class="page-break" />
+
+        <!-- =========================
+           2. ラボ用 MIC ひな型
+           ========================= -->
+        <section id="mic-template">
+          <h2>
+            2. MIC測定プロトコール（ラボひな型／OD660・3 mL キュベット使用）
+          </h2>
+
+          <div class="note">
+            太字・[　] で示した部分は各研究室・実験ごとに書き換えてください。<br />
+            OD660 とコロニー数の換算は、各自の標準曲線に合わせて調整する。
+          </div>
+
+          <h3>2.1 目的</h3>
+          <p>
+            指示菌（①[ <strong>菌名A</strong> ]，②[
+            <strong>菌名B</strong> ]）に対する [
+            <strong>抗菌薬／化合物／物質名</strong> ]
+            の最小発育阻止濃度（MIC）を，
+            96ウェルプレートを用いたブロスマイクロ希釈法により測定する。
+          </p>
+
+          <h3>2.2 材料・機器</h3>
+          <ul>
+            <li>
+              菌株：① [ 指示菌①名 ]，② [ 指示菌②名 ]（保存株または臨床分離株）。
+            </li>
+            <li>
+              培地：
+              <ul>
+                <li>細菌：CAMHB（必要に応じ LHB 添加）。</li>
+                <li>酵母：RPMI 1640（MOPS 緩衝，pH 7.0，グルコース 0.2%）。</li>
+              </ul>
+            </li>
+            <li>生理食塩水（NS）。</li>
+            <li>96ウェルマイクロプレート（平底またはU底，滅菌）。</li>
+            <li>マイクロピペット・滅菌チップ（2–20, 20–200, 100–1000 µL）。</li>
+            <li>
+              分光光度計：<strong>OD660</strong> 測定用，<strong
+                >3 mL キュベット</strong
+              >対応。
+            </li>
+            <li>37℃ インキュベーター（必要なら 5% CO<sub>2</sub>）。</li>
+            <li>ボルテックスミキサー，滅菌チューブ（1.5 mL / 15 mL）。</li>
+            <li>フラットベッドスキャナー or デジタルカメラ。</li>
+          </ul>
+
+          <h3>2.3 菌の前培養</h3>
+          <ol>
+            <li>
+              指示菌を適切な固形培地（例：血液寒天，MHA
+              など）にストリークし，37℃で 18–24時間培養する。
+            </li>
+            <li>
+              単一コロニーを 1 個ピックし，ブロス培地 [ 3–5 mL ] に接種する。
+            </li>
+            <li>
+              37℃，[ rpm ] で [ 時間 ]
+              シェイク培養し，対数増殖期の菌懸濁液を得る。
+            </li>
+          </ol>
+
+          <h3>2.4 初期懸濁液の作成</h3>
+          <ol>
+            <li>前培養菌液を軽くボルテックスして均一化する。</li>
+            <li>
+              滅菌 NS [ 例：3 mL ]
+              に前培養菌を適量懸濁し，よく混和して「<strong>初期懸濁液</strong>」とする（この段階では濃くてよい）。
+            </li>
+          </ol>
+
+          <h3>2.5 OD660 による菌数調整（3 mL キュベット使用）</h3>
+          <ol>
+            <li>
+              <strong>ブランク（キャリブレーション）</strong>：
+              <ul>
+                <li>
+                  キュベットに NS 3.0 mL を入れ，分光光度計を OD660 = 0
+                  に調整する。
+                </li>
+              </ul>
+            </li>
+            <li>
+              <strong>サンプル</strong>：
+              <ul>
+                <li>
+                  別のキュベットに NS 2.7 mL ＋ 初期懸濁液 0.3 mL（=
+                  1/10希釈）を加え，合計 3.0 mL とする。
+                </li>
+                <li>よく混和し，OD660 を測定する（目安 0.1–0.5）。</li>
+              </ul>
+            </li>
+            <li>
+              測定した OD をもとに，初期懸濁液の OD を概算する：
+              <ul>
+                <li>
+                  OD<sub>初期</sub> ≒ OD<sub>測定</sub> × 10（1/10希釈のため）。
+                </li>
+              </ul>
+            </li>
+            <li>
+              別途作成した「OD–CFU 標準曲線」から，初期懸濁液のおおよその CFU/mL
+              を推定する。
+            </li>
+          </ol>
+
+          <h3>2.6 接種用菌懸濁液（①A・①B）の調整例</h3>
+
+          <p class="subtle">
+            ※数値はテンプレート例。実際には各ラボの OD–CFU
+            換算に応じて調整する。
+          </p>
+
+          <ol>
+            <li>
+              <strong
+                >①A（高濃度懸濁液，約 1×10<sup>8</sup> CFU/mL 想定）</strong
+              >
+              <ul>
+                <li>
+                  滅菌チューブに培地 146 µL ＋ 初期懸濁液 10 µL を加え，合計 156
+                  µL。
+                </li>
+                <li>よく混和したものを「①A」とする。</li>
+              </ul>
+            </li>
+            <li>
+              <strong
+                >①B（接種用懸濁液，約 1×10<sup>6</sup> CFU/mL 想定）</strong
+              >
+              <ul>
+                <li>
+                  別チューブに ①A 14 µL ＋ 培地 1386 µL を加え，合計 1400 µL。
+                </li>
+                <li>
+                  ①A の 1/100 希釈となり，おおよそ 1×10<sup>6</sup> CFU/mL
+                  を想定。
+                </li>
+              </ul>
+            </li>
+          </ol>
+          <p class="subtle">※指示菌②についても同様に ②A・②B を作成する。</p>
+
+          <h3>2.7 抗菌薬（物質）の 2倍希釈系列の作成</h3>
+          <ol>
+            <li>
+              抗菌薬（物質）を適切な溶媒で溶解し，高濃度ストック（例：1024
+              µg/mL）を作る。
+            </li>
+            <li>
+              滅菌チューブまたは別プレートで、最終的にプレート内が [ 例：64, 32,
+              16, 8, 4, 2, 1, 0.5, 0.25, 0.125 µg/mL ] となるように、
+              <strong>2×濃度</strong> の希釈系列を準備する（プレート内では薬 50
+              µL＋菌液 50 µL で 1×濃度になる想定）。
+            </li>
+          </ol>
+
+          <h3>2.8 96ウェルプレートへの分注レイアウト</h3>
+
+          <div class="section-card">
+            <p>
+              <strong>行（A–H）</strong>：同一菌株 or 技術的リピートに使用。
+            </p>
+            <p><strong>列（1–12）</strong>の例：</p>
+            <ul>
+              <li>列1：NGC（Negative Growth Control：培地のみ）</li>
+              <li>列2–11：薬剤系列＋菌</li>
+              <li>列12：PGC（Positive Growth Control：培地＋菌）</li>
+            </ul>
+          </div>
+
+          <ol>
+            <li>
+              <strong>NGC（陰性対照）</strong>：
+              <ul>
+                <li>A1–H1 に培地 100 µL ずつ分注（菌も薬も入れない）。</li>
+              </ul>
+            </li>
+            <li>
+              <strong>PGC（陽性対照）</strong>：
+              <ul>
+                <li>A12–H12 に培地 50 µL ずつ分注。</li>
+              </ul>
+            </li>
+            <li>
+              <strong>薬剤系列</strong>：
+              <ul>
+                <li>A2–H11 に 2×濃度の薬剤溶液を 50 µL ずつ分注。</li>
+              </ul>
+            </li>
+            <li>
+              <strong>菌懸濁液の添加</strong>：
+              <ul>
+                <li>
+                  A2–H12 の各ウェルに、接種用懸濁液 ①B（または ②B）を 50 µL
+                  ずつ分注。
+                </li>
+                <li>結果として各ウェル 100 µL（薬 1×濃度＋菌）となる。</li>
+                <li>列1（NGC）には菌を入れない（培地 100 µL のみ）。</li>
+              </ul>
+            </li>
+          </ol>
+
+          <h3>2.9 インキュベーション</h3>
+          <ol>
+            <li>
+              プレートの蓋に、菌株名／物質名／濃度レンジ／日付／開始時刻を油性ペンで記入する。
+            </li>
+            <li>
+              37℃（必要に応じて 5% CO<sub>2</sub>）で 16–20時間静置培養する。
+            </li>
+          </ol>
+
+          <h3>2.10 判定と記録</h3>
+          <ol>
+            <li>
+              翌日、プレートを肉眼で観察し、各ウェルの濁りを評価する。
+              <ul>
+                <li>NGC：濁り無し → 汚染なしを確認。</li>
+                <li>PGC：濁りあり → 菌が増殖可能であることを確認。</li>
+              </ul>
+            </li>
+            <li>
+              肉眼的に発育を認めない最小濃度を
+              <strong>MIC</strong> とする（細菌・アムホテリシンB）。
+            </li>
+            <li>
+              Candida + アゾール系などでは、M27 に従い「対照の 50%
+              発育抑制」をエンドポイントとする。
+            </li>
+            <li>
+              プレート全体をフラットベッドスキャナーまたはカメラで撮影し、画像を保存しておく。
+            </li>
+            <li>
+              記録用シート（Excel など）に以下を整理する：
+              <ul>
+                <li>
+                  菌株名・物質名・培地条件（CAMHB / CAMHB+2%NaCl / RPMI など）。
+                </li>
+                <li>
+                  接種菌量（例：ウェル内 5×10<sup>5</sup> CFU/mL など計算値）。
+                </li>
+                <li>各濃度ごとの発育（＋／−）と最終 MIC。</li>
+                <li>実験日・担当者名・使用培地ロット番号。</li>
+              </ul>
+            </li>
+          </ol>
+
+          <h3>2.11 メモ欄（各ラボで追記）</h3>
+          <ul>
+            <li>
+              OD660 = 1.0 のとき [　] ×10<sup>[　]</sup> CFU/mL とみなす。
+            </li>
+            <li>
+              Staphylococcus の oxacillin MIC 測定時は「CAMHB + 2%
+              NaCl」を用いる。
+            </li>
+            <li>
+              セフィデロコール測定時は ID-CAMHB を使用（調製法 or
+              市販キット名を記載）。
+            </li>
+            <li>
+              QC 株（例：E. coli ATCC 25922，P. aeruginosa ATCC 27853，S. aureus
+              ATCC 29213 など）の MIC 範囲を別表で管理。
+            </li>
+          </ul>
+        </section>
+
+        <footer>
+          v0.1（テンプレート） – このHTMLをそのまま index.html として保存すると
+          PDF 印刷しやすいレイアウトになります。
+        </footer>
+      </main>
+    </div>
+
+    <script>
+      // ここでは印刷ボタンのみ（将来必要なら JS を追加）
+    </script>
+  </body>
+</html>
